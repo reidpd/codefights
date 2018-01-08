@@ -1,7 +1,7 @@
 const reverseParentheses = s => {
     while (s.indexOf(')') !== -1) {
         let endBracketIdx = s.indexOf(')'), startBracketIdx;
-        for (let i = endBracketIdx-1; i > 0; i--) {
+        for (let i = endBracketIdx-1; i >= 0; i--) {
             if (s[i] === '(') { startBracketIdx = i; break; }
         }
         const bracketStr = s.slice(startBracketIdx+1, endBracketIdx);
