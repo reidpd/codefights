@@ -15,14 +15,6 @@ describe('areEquallyStrong()', () => {
   });
 
   it('should return true if each persons hands *in either order* can carry an equal amount of weight', () => {
-    // const inOut = [
-    //   { input: [], output:  },
-    //   { input: [], output:  },
-    //   { input: [], output:  },
-    //   { input: [], output:  },
-    //   { input: [], output:  },
-    //   { input: [], output:  },
-    // ]
     expect(areEquallyStrong(5,10,5,10)).to.deep.equal(true);
     expect(areEquallyStrong(10,5,5,10)).to.deep.equal(true);
   });
