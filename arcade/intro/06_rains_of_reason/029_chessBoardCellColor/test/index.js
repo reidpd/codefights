@@ -12,7 +12,7 @@ describe('chessBoardCellColor()', () => {
   ];
 
   inOut.forEach(test => {
-    it('simple test', () => expect(chessBoardCellColor(test.in)).to.deep.equal(test.out));
+    it('simple test', () => expect(chessBoardCellColor(...test.in)).to.deep.equal(test.out));
   })
 
 });
