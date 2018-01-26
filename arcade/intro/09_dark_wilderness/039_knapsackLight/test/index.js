@@ -5,28 +5,12 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // growingPlant()
+      fn: '', // name
       ins_and_outs: [
         {
-          cxt: 'simple test',
-          in: [100, 10, 910],
-          out: 10,
-        }, {
-          cxt: 'simple test',
-          in: [10, 9, 4],
-          out: 1,
-        }, {
-          cxt: 'simple test',
-          in: [5, 2, 7],
-          out: 2,
-        }, {
-          cxt: 'simple test',
-          in: [7, 3, 443],
-          out: 110,
-        }, {
-          cxt: 'simple test',
-          in: [6, 5, 10],
-          out: 5,
+          cxt: '',
+          in: [],
+          out: true,
         },
         /*
         {
