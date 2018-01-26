@@ -1,5 +1,7 @@
-const rewrite_name = (/* replace with args */) => {
-  return true;
+const longestDigitsPrefix = inputString => {
+  let prefix = [], split = inputString.split('');
+  while (!isNaN(parseInt(split[0]))) prefix.push(split.shift());
+  return prefix.join('');
 };
 
-module.exports = { fns: [ /* fns */ ] }
+module.exports = { fns: [ longestDigitsPrefix ] };
