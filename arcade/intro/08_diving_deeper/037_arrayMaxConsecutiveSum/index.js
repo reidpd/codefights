@@ -5,7 +5,6 @@ const arrayMaxConsecutiveSum = (arr, k) => {
     for (let j = i; j < i+k; j++) total += arr[j];
     sums.push(total);
   }
-  console.log(sums);
   return Math.max(...sums);
 }
 
