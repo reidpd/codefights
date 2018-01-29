@@ -8,9 +8,21 @@ describe("testing ", () => {
       fn: '', // name
       ins_and_outs: [
         {
-          cxt: '',
-          in: [],
-          out: ,
+          cxt: 'simple test',
+          in: ["abcdc"],
+          out: "abcdcba",
+        }, {
+          cxt: 'simple test',
+          in: ["ababab"],
+          out: "abababa",
+        }, {
+          cxt: 'should return the input string if it is already a palindrome',
+          in: ["abba"],
+          out: "abba",
+        }, {
+          cxt: 'simple test',
+          in: ["abaa"],
+          out: "abaaba",
         },
       ],
       run: param => {
