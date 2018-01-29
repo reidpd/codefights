@@ -5,12 +5,48 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // isBeautifulString()
       ins_and_outs: [
         {
-          cxt: '',
-          in: [],
-          out: ,
+          cxt: 'simple test',
+          in: ['bbbaacdafe'],
+          out: true,
+        }, {
+          cxt: 'simple test',
+          in: ['aabbb'],
+          out: false,
+        }, {
+          cxt: 'simple test',
+          in: ['bbc'],
+          out: false,
+        }, {
+          cxt: 'simple test',
+          in: ['bbbaa'],
+          out: false,
+        }, {
+          cxt: 'simple test',
+          in: ['abcdefghijklmnopqrstuvwxyzz'],
+          out: false,
+        }, {
+          cxt: 'simple test',
+          in: ['abcdefghijklmnopqrstuvwxyz'],
+          out: true,
+        }, {
+          cxt: 'simple test',
+          in: ['abcdefghijklmnopqrstuvwxyzqwertuiopasdfghjklxcvbnm'],
+          out: true,
+        }, {
+          cxt: 'simple test',
+          in: ['fyudhrygiuhdfeis'],
+          out: false,
+        }, {
+          cxt: 'simple test',
+          in: ['zza'],
+          out: false,
+        }, {
+          cxt: 'simple test',
+          in: ['zyy'],
+          out: false,
         },
       ],
       run: param => {
