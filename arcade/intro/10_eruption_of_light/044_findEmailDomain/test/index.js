@@ -8,9 +8,21 @@ describe("testing ", () => {
       fn: '', // name
       ins_and_outs: [
         {
-          cxt: '',
-          in: [],
-          out: ,
+          cxt: 'simple test',
+          in: ['prettyandsimple@example.com'],
+          out: 'example.com',
+        }, {
+          cxt: 'simple test',
+          in: ['<>[]:,;@\"!#$%&*+-/=?^_{}| ~.a\"@example.org'],
+          out: 'example.org',
+        }, {
+          cxt: 'simple test',
+          in: ['someaddress@yandex.ru'],
+          out: 'yandex.ru',
+        }, {
+          cxt: 'simple test',
+          in: ["\" \"@xample.org"],
+          out: 'xample.org',
         },
       ],
       run: param => {

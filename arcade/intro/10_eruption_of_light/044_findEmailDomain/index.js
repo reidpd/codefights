@@ -1,5 +1,3 @@
-const funcName = () => {
-  return true;
-};
+const findEmailDomain = (address) => address.split('').slice(address.lastIndexOf('@')+1).join('');
 
-module.exports = { fns: [ funcName ] };
+module.exports = { fns: [ findEmailDomain ] };
