@@ -8,9 +8,21 @@ describe("testing ", () => {
       fn: '', // validTime()
       ins_and_outs: [
         {
-          cxt: 'simple test',
-          in: [],
+          cxt: 'returns true for two strings joined by a semi-colon that are respectively between 0-23 & 00-59',
+          in: ["13:58"],
           out: true,
+        },{
+          cxt: 'returns false for strings with hours that go beyond 23',
+          in: ["25:51"],
+          out: false,
+        },{
+          cxt: 'returns false for minutes that go beyond 59',
+          in: ["02:76"],
+          out: false,
+        },{
+          cxt: 'returns false for 24:00',
+          in: ["24:00"],
+          out: false,
         },
       ],
       run: param => {
