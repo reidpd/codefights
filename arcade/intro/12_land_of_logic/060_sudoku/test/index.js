@@ -5,7 +5,7 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // sudoku()
       ins_and_outs: [
         {
           cxt: 'simple test',

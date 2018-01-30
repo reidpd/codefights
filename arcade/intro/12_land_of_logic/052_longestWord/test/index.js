@@ -5,7 +5,7 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // longestWord()
       ins_and_outs: [
         {
           cxt: 'simple test',
