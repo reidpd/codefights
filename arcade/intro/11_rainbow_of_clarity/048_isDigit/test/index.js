@@ -8,9 +8,49 @@ describe("testing ", () => {
       fn: '', // isDigit()
       ins_and_outs: [
         {
-          cxt: 'simple test',
-          in: [],
+          cxt: 'returns true for "0" ',
+          in: ["0"],
           out: true,
+        },{
+          cxt: 'returns false for "-" ',
+          in: ["-"],
+          out: false,
+        },{
+          cxt: 'returns false for "O" ',
+          in: ["O"],
+          out: false,
+        },{
+          cxt: 'returns true for "1" ',
+          in: ["1"],
+          out: true,
+        },{
+          cxt: 'returns true for "2" ',
+          in: ["2"],
+          out: true,
+        },{
+          cxt: 'returns false for "!" ',
+          in: ["!"],
+          out: false,
+        },{
+          cxt: 'returns false for "@"',
+          in: ["@"],
+          out: false,
+        },{
+          cxt: 'returns false for "+"',
+          in: ["+"],
+          out: false,
+        },{
+          cxt: 'returns true for "6"',
+          in: ["6"],
+          out: true,
+        },{
+          cxt: 'returns false for "("',
+          in: ["("],
+          out: false,
+        },{
+          cxt: 'returns false for ")"',
+          in: [")"],
+          out: false,
         },
       ],
       run: param => {
