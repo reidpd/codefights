@@ -9,8 +9,16 @@ describe("testing ", () => {
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: ["Ready, steady, go!"],
+          out: "steady",
+        },{
+          cxt: 'ignores non-latin alphabetical characters',
+          in: ["Ready[[[, steady, go!"],
+          out: "steady",
+        },{
+          cxt: 'returns input if only one word is present',
+          in: ["ABCd"],
+          out: "ABCd",
         },
       ],
       run: param => {
