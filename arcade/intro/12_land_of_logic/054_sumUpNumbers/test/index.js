@@ -8,9 +8,17 @@ describe("testing ", () => {
       fn: '', // sumUpNumbers()
       ins_and_outs: [
         {
-          cxt: 'simple test',
-          in: [],
-          out: true,
+          cxt: 'returns a sum of all different numbers in the inputString',
+          in: ["2 apples, 12 oranges"],
+          out: 14,
+        },{
+          cxt: 'returns the inputString parsed to a number if the string is itself a number',
+          in: ["123450"],
+          out: 123450,
+        },{
+          cxt: 'returns 0 if no counts of items can be found in the inputString',
+          in: ["Your payment method is invalid"],
+          out: 0,
         },
       ],
       run: param => {
