@@ -9,9 +9,78 @@ describe("testing ", () => {
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
-        },
+          in: [
+            [
+              [1,2,1],
+              [2,2,2],
+              [2,2,2],
+              [1,2,3],
+              [2,2,1]
+            ]
+          ],
+          out: 6,
+        },{
+          cxt: 'if all digits are the same, return 1',
+          in: [
+            [
+              [9,9,9,9,9],
+              [9,9,9,9,9],
+              [9,9,9,9,9],
+              [9,9,9,9,9],
+              [9,9,9,9,9],
+              [9,9,9,9,9]
+            ]
+          ],
+          out: 1,
+        },{
+          cxt: 'returns 0 if a 2x2 square cannot be formed with the given array.array',
+          in: [
+            [
+              [3]
+            ]
+          ],
+          out: 0,
+        },{
+          cxt: 'returns 0 if a 2x2 square cannot be formed with the given array.array',
+          in: [
+            [
+              [3,4,5,6,7,8,9]
+            ]
+          ],
+          out: 0,
+        },{
+          cxt: 'returns 0 if a 2x2 square cannot be formed with the given array.array',
+          in: [
+            [
+              [3],[4],[5],[6],[7]
+            ]
+          ],
+          out: 0,
+        },{
+          cxt: 'returns 0 if a 2x2 square cannot be formed with the given array.array',
+          in: [
+            [
+              [1,1,1,1,1,1,2,2,2,3,3,3,9,9,9,2,3,9]
+            ]
+          ],
+          out: 0,
+        },{
+          cxt: 'complicated test',
+          in: [
+            [
+              [2,5,3,4,3,1,3,2],
+              [4,5,4,1,2,4,1,3],
+              [1,1,2,1,4,1,1,5],
+              [1,3,4,2,3,4,2,4],
+              [1,5,5,2,1,3,1,1],
+              [1,2,3,3,5,1,2,4],
+              [3,1,4,4,4,1,5,5],
+              [5,1,3,3,1,5,3,5],
+              [5,4,4,3,5,4,4,4]
+            ]
+          ],
+          out: 54,
+        }
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
