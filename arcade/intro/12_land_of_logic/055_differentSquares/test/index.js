@@ -88,6 +88,39 @@ describe("testing ", () => {
           expect(param.fn(...param.in)).to.deep.equal(param.out);
         });
       }
+    }, {
+      fn: '', // squareIsUnique()
+      ins_and_outs: [
+        {
+          cxt: 'returns true if the *squareVals* array is not found inside the first parameter *iterations*',
+          in: [
+            [ // iterations
+              [1,2,3,4],
+              [2,3,4,5],
+              [3,4,5,6]
+            ],
+            [4,5,6,7] // squareVals
+          ],
+          out: true,
+        },{
+          cxt: 'returns false if the *squareVals* array can already be found inside the first parameter *iterations*',
+          in: [
+            [ // iterations
+              [1,2,3,4],
+              [2,3,4,5],
+              [3,4,5,6]
+            ],
+            [1,2,3,4] // squareVals
+          ],
+          out: false,
+        },
+      ],
+      run: param => {
+        const cxt = param.fn.name + '() ' + param.cxt;
+        it(cxt, () => {
+          expect(param.fn(...param.in)).to.deep.equal(param.out);
+        });
+      }
     }/*, {
       fn: '', // name
       ins_and_outs: [
