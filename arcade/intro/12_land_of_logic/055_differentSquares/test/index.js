@@ -113,6 +113,17 @@ describe("testing ", () => {
             [1,2,3,4] // squareVals
           ],
           out: false,
+        },{
+          cxt: 'returns true if the *squareVals* array is not found inside the first parameter *iterations*',
+          in: [
+            [ // iterations
+              [1,2,3,4],
+              [2,3,4,5],
+              [3,4,5,6]
+            ],
+            [4,5,6,7] // squareVals
+          ],
+          out: true,
         },
       ],
       run: param => {
