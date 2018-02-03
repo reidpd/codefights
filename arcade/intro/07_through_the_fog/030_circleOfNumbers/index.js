@@ -4,4 +4,4 @@ const circleOfNumbers = (n, firstNumber) => {
   return circle[n/2];
 };
 
-module.exports = { circleOfNumbers }
+module.exports = { fns: [ circleOfNumbers ] }
