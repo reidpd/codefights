@@ -8,9 +8,21 @@ describe("testing ", () => {
       fn: '', // largestNumber()
       ins_and_outs: [
         {
-          cxt: 'simple test',
-          in: [],
-          out: true,
+          cxt: 'should return the largest number possible for n number of digits',
+          in: [2],
+          out: 99,
+        },{
+          cxt: 'should return the largest number possible for n number of digits',
+          in: [1],
+          out: 9,
+        },{
+          cxt: 'should return the largest number possible for n number of digits',
+          in: [3],
+          out: 999,
+        },{
+          cxt: 'should return the largest number possible for n number of digits',
+          in: [4],
+          out: 9999,
         },
       ],
       run: param => {
