@@ -8,9 +8,29 @@ describe("testing ", () => {
       fn: '', // lateRide()
       ins_and_outs: [
         {
-          cxt: 'simple test',
-          in: [],
-          out: true,
+          cxt: 'returns the sum of digits the digital time would show',
+          in: [240],
+          out: 4,
+        },{
+          cxt: 'returns the sum of digits the digital time would show',
+          in: [808],
+          out: 14,
+        },{
+          cxt: 'returns the sum of digits the digital time would show',
+          in: [1439],
+          out: 19,
+        },{
+          cxt: 'returns the sum of digits the digital time would show',
+          in: [0],
+          out: 0,
+        },{
+          cxt: 'returns the sum of digits the digital time would show',
+          in: [23],
+          out: 5,
+        },{
+          cxt: 'returns the sum of digits the digital time would show',
+          in: [8],
+          out: 8,
         },
       ],
       run: param => {

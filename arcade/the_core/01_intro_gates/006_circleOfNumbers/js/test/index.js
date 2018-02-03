@@ -9,8 +9,20 @@ describe("testing ", () => {
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [10,2],
+          out: 7,
+        },{
+          cxt: 'simple test',
+          in: [10,7],
+          out: 2,
+        },{
+          cxt: 'simple test',
+          in: [4,1],
+          out: 3,
+        },{
+          cxt: 'simple test',
+          in: [6,3],
+          out: 0,
         },
       ],
       run: param => {

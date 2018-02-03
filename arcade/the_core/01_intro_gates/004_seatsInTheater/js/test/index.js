@@ -9,8 +9,24 @@ describe("testing ", () => {
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [16,11,5,3],
+          out: 96,
+        },{
+          cxt: 'returns 0 if nobody will be bothered',
+          in: [1,1,1,1],
+          out: 0,
+        },{
+          cxt: 'simple test',
+          in: [13,6,8,3],
+          out: 18,
+        },{
+          cxt: 'simple test',
+          in: [60,100,60,1],
+          out: 99,
+        },{
+          cxt: 'returns 0 if nobody will be bothered',
+          in: [1000,1000,1000,1000],
+          out: 0,
         },
       ],
       run: param => {
