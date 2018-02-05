@@ -9,6 +9,25 @@ describe("testing ", () => {
       ins_and_outs: [
         {
           cxt: 'simple test',
+          in: [ // l, k
+            [3, 1, 2, 3, 4, 5],
+            3
+          ],
+          out: [1, 2, 4, 5],
+        },{
+          cxt: 'simple test',
+          in: [],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: [],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: [],
+          out: true,
+        },{
+          cxt: 'simple test',
           in: [],
           out: true,
         },
