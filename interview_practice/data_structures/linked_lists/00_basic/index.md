@@ -13,6 +13,8 @@ A. Simple Nodes
   4. DELETE
 
 B. Singly-Linked Lists
+  0. TRAVERSE
+    a. from head to tail
   1. CREATE
     a. from array
     b. from obj

@@ -17,7 +17,6 @@ describe("testing ", () => {
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
         it(cxt, () => {
-          console.log(param.fn());
           expect(param.fn(...param.in)).to.deep.equal(param.out);
         });
       }
