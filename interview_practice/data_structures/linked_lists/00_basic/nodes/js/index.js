@@ -2,19 +2,19 @@
 
 const blankNode = () => Object.assign({});
 
-const nodeWithVal = val => {
-  const node = { val };
+const nodeWithData = data => {
+  const node = { data };
   return Object.assign(node, {});
 };
 
-const createSingleDirNode = (val, next) => {
-  let node = nodeWithVal(val);
+const createSingleDirNode = (data, next) => {
+  let node = nodeWithData(data);
   if (next) { node.next = next } else { node.next = null }
   return node;
 }
 
-const createFlexDirNode = (val, next, prev) => {
-  let node = nodeWithVal(val);
+const createFlexDirNode = (data, next, prev) => {
+  let node = nodeWithData(data);
   if (next) { node.next = next } else { node.next = null }
   if (prev) { node.prev = prev } else { node.prev = null }
   return node;
@@ -37,7 +37,7 @@ const deleteNodePropReadNode = (node, prop) => { delete node[prop]; return node;
 module.exports = {
   fns: [
     blankNode,
-    nodeWithVal,
+    nodeWithData,
     createSingleDirNode,
     createFlexDirNode,
     readNodeProp,
@@ -46,7 +46,7 @@ module.exports = {
     deleteNodePropReadNode,
   ],
   blank: blankNode,
-  withVal: nodeWithVal,
+  withData: nodeWithData,
   createSingle: createSingleDirNode,
   createFlex: createFlexDirNode,
   readProp: readNodeProp,

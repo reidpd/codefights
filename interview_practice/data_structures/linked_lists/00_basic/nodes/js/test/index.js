@@ -21,17 +21,13 @@ describe("testing ", () => {
         });
       }
     }, {
-      fn: '', // node.withVal()
+      fn: '', // node.withData()
       ins_and_outs: [
         {
-          cxt: 'should return an object with this.val equal to the input provided (string)',
-          in: ['string'],
-          out: { val: 'string' },
-        },{
-          cxt: 'should return an object with this.val equal to the input provided (integer)',
-          in: [1],
-          out: { val: 1 },
-        },
+          cxt: 'should return an object with this.data equal to the object provided',
+          in: [{ val: 'string' }],
+          out: { data: { val: 'string' } },
+        }
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
@@ -43,13 +39,13 @@ describe("testing ", () => {
       fn: '', // node.createSingleDir()
       ins_and_outs: [
         {
-          cxt: 'should return a node with a val && a next if provided',
-          in: [1, node.withVal(2)],
-          out: { val: 1, next: node.withVal(2) },
+          cxt: 'should return a node with a data && a next if provided',
+          in: [{val:1}, node.withData(2)],
+          out: { data: { val: 1 }, next: node.withData(2) },
         },{
-          cxt: 'should return a node with a val && a next prop with val of null if no next input is provided',
-          in: [1],
-          out: { val: 1, next: null },
+          cxt: 'should return a node with a data && a next prop with val of null if no next input is provided',
+          in: [{val:1}],
+          out: { data: { val: 1 }, next: null },
         }
       ],
       run: param => {
@@ -62,20 +58,20 @@ describe("testing ", () => {
       fn: '', // node.createFlex()
       ins_and_outs: [
         {
-          cxt: 'should return an obj with the val, and a next && prev props if input is provided for them',
+          cxt: 'should return an obj with the data, and a next && prev props if input is provided for them',
           in: [
-            2,
-            node.withVal(3),
-            node.withVal(1)
+            {val:2},
+            node.withData(3),
+            node.withData(1)
           ],
-          out: { val: 2, next: node.withVal(3), prev: node.withVal(1) },
+          out: { data: { val: 2  }, next: node.withData(3), prev: node.withData(1) },
         },{
           cxt: 'should return an obj with the val, and a next prop if input is provided for it, and a prev prop of null if that is not provided',
           in: [
-            1,
-            node.withVal(2)
+            {val:1},
+            node.withData(2)
           ],
-          out: { val: 1, next: node.withVal(2), prev: null },
+          out: { data: { val: 1 }, next: node.withData(2), prev: null },
         },
       ],
       run: param => {
@@ -108,11 +104,11 @@ describe("testing ", () => {
         {
           cxt: 'should update the given prop of the given node & return the node',
           in: [
-            node.withVal('foo'),
-            'val',
+            node.withData('foo'),
+            'data',
             'bar'
           ],
-          out: node.withVal('bar'),
+          out: node.withData('bar'),
         },
       ],
       run: param => {
@@ -128,16 +124,16 @@ describe("testing ", () => {
         {
           cxt: 'should update the given prop of the given node && return the newly updated prop of the given node',
           in: [
-            node.withVal('foo'),
-            'val',
+            node.withData('foo'),
+            'data',
             'bar'
           ],
           out: 'bar',
         },{
           cxt: 'should return an updated prop on second reference',
           in: [
-            node.withVal('foo'),
-            'val',
+            node.withData('foo'),
+            'data',
             'bar'
           ],
           out: 'bar',
@@ -151,9 +147,9 @@ describe("testing ", () => {
           if (param.test_cxt !== 'testing second reference') {
             expect(result).to.deep.equal(param.out);
           } else {
-            let refNode = node.withVal('foo');
-            let update = node.updatePropReadNode(refNode, 'val', 'bar');
-            expect(node.readProp(update, 'val')).to.deep.equal(param.out);
+            let refNode = node.withData('foo');
+            let update = node.updatePropReadNode(refNode, 'data', 'bar');
+            expect(node.readProp(update, 'data')).to.deep.equal(param.out);
           }
         });
       }
@@ -163,8 +159,8 @@ describe("testing ", () => {
         {
           cxt: 'should return a node in which the given prop for deletion is now *undefined*',
           in: [
-            node.withVal(1),
-            'val'
+            node.withData(1),
+            'data'
           ],
           out: node.blank(),
         },
