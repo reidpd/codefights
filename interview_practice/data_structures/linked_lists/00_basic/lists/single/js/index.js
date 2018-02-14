@@ -124,6 +124,19 @@ class List {
     this._length = reversal._length;
     return this;
   }
+
+  indexOf(val, key) {
+    if (!this.head) { return null }
+    let currentNode = this.head, currentIdx = 0;
+    while (currentNode.next) {
+      if (currentNode.data === val || currentNode.data[key] === val) {
+        return currentIdx;
+      }
+      currentIdx++;
+      currentNode = currentNode.next;
+    }
+    return null;
+  }
 }
 
 module.exports = { List, node };

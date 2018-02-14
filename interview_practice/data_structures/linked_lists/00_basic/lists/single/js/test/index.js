@@ -231,6 +231,32 @@ describe("testing ", () => {
 
     });
 
+    describe('List.indexOf(val, key)', () => {
+
+      describe('If *key* input IS provided, ', () => {
+        it('returns the index of the first node whose data is equal to the input val provided', () => {
+          list.fill([{val:0}, {val:1}, {val:2}, {val:1}]);
+          expect(list.indexOf(1, 'val')).to.deep.equal(1);
+        });
+        it('returns null if the desired item cannot be found', () => {
+          list.fill([{val:0}, {val:1}, {val:2}, {val:1}]);
+          expect(list.indexOf(3, 'val')).to.deep.equal(null);
+          expect(list.indexOf(1, 'foo')).to.deep.equal(null);
+        });
+      });
+
+      describe('If *key* input IS NOT provided, ', () => {
+        it('returns the index of the node in which the key/value pair can be found within currentNode.data', () => {
+          list.fill([0,1,2,3,1]);
+          expect(list.indexOf(1)).to.deep.equal(1);
+        });
+        it('returns null if the desired item cannot be found', () => {
+          list.fill([0,1,2,3,1]);
+          expect(list.indexOf(4)).to.deep.equal(null);
+        });
+      });
+
+    });
 
   });
 
