@@ -2,34 +2,48 @@ const expect = require('chai').expect;
 const fns = require('..').fns;
 console.log('fns === ', fns);
 
+const List = require('../../../00_basic/lists/single/js/');
+
 describe("testing ", () => {
   const tests = [
     {
       fn: '', // removeKFromList()
       ins_and_outs: [
         {
-          cxt: 'simple test',
+          cxt: 'returns a singly-linked list with all nodes whose value is equal to *k* filtered out',
           in: [ // l, k
-            [3, 1, 2, 3, 4, 5],
+            new List('value').fill([3, 1, 2, 3, 4, 5]).head,
             3
           ],
-          out: [1, 2, 4, 5],
+          out: new List('value').fill([1, 2, 4, 5]).head,
+        },{
+          cxt: 'returns the list provided if the value cannot be found within the list',
+          in: [
+            new List('value').fill([1, 2, 3, 4, 5, 6, 7]).head,
+            10
+          ],
+          out: new List('value').fill([1, 2, 3, 4, 5, 6, 7]).head,
+        },{
+          cxt: 'returns an empty list if all values within the list are equal to *k*',
+          in: [
+            new List('value').fill([1000, 1000, 1000]).head,
+            1000
+          ],
+          out: new List('value').head, // === null
+        },{
+          cxt: 'returns an empty list if the input list is empty and a k is still provided',
+          in: [
+            new List('value').head,
+            -1000
+          ],
+          out: new List('value').head,
         },{
           cxt: 'simple test',
-          in: [],
-          out: true,
-        },{
-          cxt: 'simple test',
-          in: [],
-          out: true,
-        },{
-          cxt: 'simple test',
-          in: [],
-          out: true,
-        },{
-          cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [
+            new List('value').fill([123, 456, 789, 0]).head,
+            0
+          ],
+          out: new List('value').fill([123, 456, 789]).head,
         },
       ],
       run: param => {
