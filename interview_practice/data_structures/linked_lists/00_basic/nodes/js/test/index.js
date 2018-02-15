@@ -27,6 +27,10 @@ describe("testing ", () => {
           cxt: 'should return an object with this.data equal to the object provided',
           in: [{ val: 'string' }],
           out: { data: { val: 'string' } },
+        },{
+          cxt: 'should return an object with this[propName] equal to the data obj provided, if a propName was provided as well',
+          in: ['str', 'value'],
+          out: { value: 'str' },
         }
       ],
       run: param => {
@@ -46,6 +50,10 @@ describe("testing ", () => {
           cxt: 'should return a node with a data && a next prop with val of null if no next input is provided',
           in: [{val:1}],
           out: { data: { val: 1 }, next: null },
+        },{
+          cxt: 'should return node with a property named propName whose value is the data object provided as the first parameter',
+          in: [1, null, 'value'],
+          out: { value: 1, next: null },
         }
       ],
       run: param => {
@@ -72,6 +80,15 @@ describe("testing ", () => {
             node.withData(2)
           ],
           out: { data: { val: 1 }, next: node.withData(2), prev: null },
+        },{
+          cxt: 'should return an obj with the data set to a property named propName, and a next && prev props if input is provided for them',
+          in: [
+            {val:2},
+            node.withData(3),
+            node.withData(1),
+            'value',
+          ],
+          out: { value: { val: 2  }, next: node.withData(3), prev: node.withData(1) },
         },
       ],
       run: param => {

@@ -2,19 +2,20 @@
 
 const blankNode = () => Object.assign({});
 
-const nodeWithData = data => {
-  const node = { data };
+const nodeWithData = (data, propName) => {
+  let node = {};
+  propName ? node[propName] = data : node['data'] = data;
   return Object.assign(node, {});
 };
 
-const createSingleDirNode = (data, next) => {
-  let node = nodeWithData(data);
+const createSingleDirNode = (data, next, propName) => {
+  let node = nodeWithData(data, propName);
   if (next) { node.next = next } else { node.next = null }
   return node;
 }
 
-const createFlexDirNode = (data, next, prev) => {
-  let node = nodeWithData(data);
+const createFlexDirNode = (data, next, prev, propName) => {
+  let node = nodeWithData(data, propName);
   if (next) { node.next = next } else { node.next = null }
   if (prev) { node.prev = prev } else { node.prev = null }
   return node;

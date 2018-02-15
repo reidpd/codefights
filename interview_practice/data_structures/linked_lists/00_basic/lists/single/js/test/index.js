@@ -21,11 +21,11 @@ describe("testing ", () => {
     describe('List.push(item)', () => {
       it('should add a new node with the given item data to the pre-existing list', () => {
         list.push(1);
-        expect(list.head.data).to.deep.equal(1);
+        expect(list.head[list.dataPropName]).to.deep.equal(1);
         list.push(2);
-        expect(list.head.next.data).to.deep.equal(2);
+        expect(list.head.next[list.dataPropName]).to.deep.equal(2);
         list.push(3);
-        expect(list.head.next.next.data).to.deep.equal(3);
+        expect(list.head.next.next[list.dataPropName]).to.deep.equal(3);
       });
       it('should increment this._length by 1', () => {
         list.push(node.createSingle(1));
@@ -39,7 +39,7 @@ describe("testing ", () => {
         const pushVal = {val:1};
         list.push(pushVal);
         const returnVal = list.pop();
-        expect(returnVal).to.deep.equal(node.createSingle(pushVal));
+        expect(returnVal).to.deep.equal(node.createSingle(pushVal, null, list.dataPropName));
       });
       it('removes the final node & sets the previous *next* pointer to null on second reference', () => {
         list.fill([0,1,2]);
@@ -70,13 +70,13 @@ describe("testing ", () => {
       it('should replace list.head.data with the input item', () => {
         list.fill([1,2,3]);
         list.unshift(0);
-        expect(list.head.data).to.deep.equal(0);
+        expect(list.head[list.dataPropName]).to.deep.equal(0);
       });
 
     });
 
     describe('List.shift()', () => {
-      it('returns this.head.data', () => {
+      it('returns this.head[this.dataPropName]', () => {
         list.fill([1,2,3]);
         const returnVal = list.shift();
         expect(returnVal).to.deep.equal(1);
@@ -85,7 +85,7 @@ describe("testing ", () => {
       it('removes the first node from the list while reducing the length by 1', () => {
         list.fill([1,2,3]);
         const returnVal = list.shift();
-        expect(list.head.data).to.deep.equal(2);
+        expect(list.head[list.dataPropName]).to.deep.equal(2);
       });
 
       it('reduces this._length by 1', () => {
@@ -114,25 +114,25 @@ describe("testing ", () => {
 
       it('returns this with the indexTH node in the list (for positive input) updated', () => {
         list.fill([1,2,3,4,5,6]);
-        const comparison = new List().fill([1,2,8,4,5,6]);
+        const comparison = new List(list.dataPropName).fill([1,2,8,4,5,6]);
         const returnVal = list.set(2, 8);
         expect(returnVal).to.deep.equal(comparison);
       });
       it('sets the indexTH node in the list (for positive input) on second reference', () => {
         list.fill([1,2,3,4,5,6]);
         list.set(2, 8);
-        expect(list.head.next.next.data).to.deep.equal(8)
+        expect(list.head.next.next[list.dataPropName]).to.deep.equal(8)
       });
       it('returns this with the (this._length + index)TH node in the list (for negative input) updated', () => {
         list.fill([1,2,3,4,5,6]);
-        const comparison = new List().fill([1,2,3,4,8,6]);
+        const comparison = new List(list.dataPropName).fill([1,2,3,4,8,6]);
         const returnVal = list.set(-2, 8);
         expect(returnVal).to.deep.equal(comparison);
       });
       it('sets the indexTH node in the list (for positive input) on second reference', () => {
         list.fill([1,2,3,4,5,6]);
         list.set(-5, 8);
-        expect(list.head.next.data).to.deep.equal(8)
+        expect(list.head.next[list.dataPropName]).to.deep.equal(8)
       });
     });
 
@@ -140,10 +140,10 @@ describe("testing ", () => {
       it('should push each item in the input array onto the end of the list as a new node', () => {
         list.push(0);
         list.fill([1,2,3]);
-        expect(list.head.data).to.deep.equal(0);
-        expect(list.head.next.data).to.deep.equal(1);
-        expect(list.head.next.next.data).to.deep.equal(2);
-        expect(list.head.next.next.next.data).to.deep.equal(3);
+        expect(list.head[list.dataPropName]).to.deep.equal(0);
+        expect(list.head.next[list.dataPropName]).to.deep.equal(1);
+        expect(list.head.next.next[list.dataPropName]).to.deep.equal(2);
+        expect(list.head.next.next.next[list.dataPropName]).to.deep.equal(3);
       });
       it('should add the input array length to this._length', () => {
         list.push(1);
@@ -157,7 +157,7 @@ describe("testing ", () => {
       it('returns the empty list', () => {
         list.push(1); list.push(2); list.push(3);
         expect(list._length).to.deep.equal(3);
-        expect(list.clear()).to.deep.equal(new List());
+        expect(list.clear()).to.deep.equal(new List(list.dataPropName));
       });
       it('reduces this._length to 0', () => {
         list.push(1); list.push(2); list.push(3);
@@ -179,12 +179,12 @@ describe("testing ", () => {
       it('removes the element at the specified POSITIVE index on second reference', () => {
         list.fill([0,1,2,3]);
         list.remove(1);
-        expect(list.head.next.data).to.deep.equal(2);
+        expect(list.head.next[list.dataPropName]).to.deep.equal(2);
       });
       it('removes the element at the specified NEGATIVE index on second reference', () => {
         list.fill([0,1,2,3]);
         list.remove(-2);
-        expect(list.head.next.next.data).to.deep.equal(3);
+        expect(list.head.next.next[list.dataPropName]).to.deep.equal(3);
       });
       it('reduces this._length by 1', () => {
         list.fill([0,1,2,3]);
@@ -197,28 +197,28 @@ describe("testing ", () => {
       });
       it('returns undefined if the specified NEGATIVE index does not exist within the list', () => {
         list.fill([0,1,2,3]);
-        expect(list.remove([-4]));
+        expect(list.remove([-4])).to.deep.equal(undefined);
       });
     });
 
     describe('List.reverse()', () => {
       it('returns a new List in which the order of nodes is reversed', () => {
         list.fill([0,1,2,3,4,5])
-        const reversal = new List().fill([5,4,3,2,1,0]);
+        const reversal = new List(list.dataPropName).fill([5,4,3,2,1,0]);
         expect(list.reverse()).to.deep.equal(reversal);
       });
       it('reverses the list on second reference', () => {
         list.fill([0,1,2,3]);
         list.reverse();
-        expect(list.head.data).to.deep.equal(3);
-        expect(list.head.next.data).to.deep.equal(2);
-        expect(list.head.next.next.data).to.deep.equal(1);
-        expect(list.head.next.next.next.data).to.deep.equal(0);
+        expect(list.head[list.dataPropName]).to.deep.equal(3);
+        expect(list.head.next[list.dataPropName]).to.deep.equal(2);
+        expect(list.head.next.next[list.dataPropName]).to.deep.equal(1);
+        expect(list.head.next.next.next[list.dataPropName]).to.deep.equal(0);
       });
       it('reverses the list on second reference if the length is equal to 1', () => {
         list.fill([0]);
         list.reverse();
-        expect(list.head.data).to.deep.equal(0);
+        expect(list.head[list.dataPropName]).to.deep.equal(0);
       });
       it('does not mutate this._length', () => {
         list.fill([0,1,2,3]);

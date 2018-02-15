@@ -3,8 +3,9 @@ const node = require('../../../nodes/js');
 // B1: Singly-Linked Lists: CREATE from array
 
 class List {
-  constructor() {
+  constructor(dataPropName) {
     this.head = null;
+    this.dataPropName = dataPropName || 'data';
     // this.tail = null;
     this._length = 0;
   }
@@ -15,7 +16,7 @@ class List {
   }
 
   push(item) {
-    const newTail = node.createSingle(item);
+    const newTail = node.createSingle(item, null, this.dataPropName);
     if (this._length === 0) {
       this.head = newTail;
       // this.tail = newTail;
@@ -56,14 +57,14 @@ class List {
 
   unshift(data) {
     const originalHead = this.head;
-    this.head = node.createSingle(data, originalHead);
+    this.head = node.createSingle(data, originalHead, this.dataPropName);
     this._length++;
     return this._length;
   }
 
   shift() {
     if (this._length === 0) { return undefined } else { this._length--; }
-    const shiftValue = this.head.data;
+    const shiftValue = this.head[this.dataPropName];
     this.head = this.head.next;
     return shiftValue;
   }
@@ -76,7 +77,7 @@ class List {
       currentNode = currentNode.next
       idx++;
     }
-    return currentNode.data;
+    return currentNode[this.dataPropName];
   }
 
   set(index, val) {
@@ -87,7 +88,7 @@ class List {
       currentNode = currentNode.next
       idx++;
     }
-    currentNode.data = val;
+    currentNode[this.dataPropName] = val;
     return this;
   }
 
@@ -96,11 +97,11 @@ class List {
     if (index < 0) { index = this._length + index }
     let removed_data, x = 0, currentNode = this.head;
     if (index === 0) {
-      removed_data = this.head.data;
+      removed_data = this.head[this.dataPropName];
       this.head = this.head.next;
     } else {
       while (x !== index - 1) { currentNode = currentNode.next; x++; }
-      removed_data = currentNode.next.data;
+      removed_data = currentNode.next[this.dataPropName];
       currentNode.next = index === this._length-1 ? null : currentNode.next.next;
     }
     this._length--;
@@ -110,13 +111,13 @@ class List {
   reverse() {
     if (this._length === 0) { return null }
     const originalLength = this._length;
-    const reversal = new List();
-    reversal.head = node.createSingle(this.pop().data);
+    const reversal = new List(this.dataPropName);
+    reversal.head = node.createSingle(this.pop()[this.dataPropName], null, this.dataPropName);
     reversal._length++;
     let currentNode = reversal.head;
     while (this._length !== 0) {
       const lastItem = this.pop();
-      currentNode.next = this.length === 0 ? null : node.createSingle(lastItem.data);
+      currentNode.next = this.length === 0 ? null : node.createSingle(lastItem[this.dataPropName], null, this.dataPropName);
       reversal._length++;
       currentNode = currentNode.next;
     }
@@ -129,7 +130,7 @@ class List {
     if (!this.head) { return null }
     let currentNode = this.head, currentIdx = 0;
     while (currentNode.next) {
-      if (currentNode.data === val || currentNode.data[key] === val) {
+      if (currentNode[this.dataPropName] === val || currentNode[this.dataPropName][key] === val) {
         return currentIdx;
       }
       currentIdx++;
