@@ -6,7 +6,7 @@
 //
 
 const removeKFromList = (l, k) => {
-  l = l.map(val => )
+  while (l)
   return true;
 };
 
