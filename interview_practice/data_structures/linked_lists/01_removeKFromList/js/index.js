@@ -8,13 +8,13 @@
 const List = require('../../00_basic/lists/single/js/').List;
 
 const removeKFromList = (l, k) => {
-  const returnList = new List();
+  const returnList = new List('value');
   let node = l;
-  while (node.next) {
-    if (node.value !== k) { returnList.push() }
+  while (node) {
+    if (node.value !== k) { returnList.push(node.value) }
     node = node.next;
   }
-  return returnList; // still not quite right
+  return returnList.head; // still not quite right
 };
 
 const listNode = x => {

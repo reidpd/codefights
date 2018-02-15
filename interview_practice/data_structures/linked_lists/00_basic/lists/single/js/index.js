@@ -1,4 +1,4 @@
-const node = require('../../../nodes/js');
+const Node = require('../../../nodes/js').Node;
 
 // B1: Singly-Linked Lists: CREATE from array
 
@@ -16,7 +16,7 @@ class List {
   }
 
   push(item) {
-    const newTail = node.createSingle(item, null, this.dataPropName);
+    const newTail = new Node(item, this.dataPropName, null);
     if (this._length === 0) {
       this.head = newTail;
       // this.tail = newTail;
@@ -57,7 +57,7 @@ class List {
 
   unshift(data) {
     const originalHead = this.head;
-    this.head = node.createSingle(data, originalHead, this.dataPropName);
+    this.head = new Node(data, this.dataPropName, originalHead);
     this._length++;
     return this._length;
   }
@@ -112,12 +112,12 @@ class List {
     if (this._length === 0) { return null }
     const originalLength = this._length;
     const reversal = new List(this.dataPropName);
-    reversal.head = node.createSingle(this.pop()[this.dataPropName], null, this.dataPropName);
+    reversal.head = new Node(this.pop()[this.dataPropName], this.dataPropName, null);
     reversal._length++;
     let currentNode = reversal.head;
     while (this._length !== 0) {
       const lastItem = this.pop();
-      currentNode.next = this.length === 0 ? null : node.createSingle(lastItem[this.dataPropName], null, this.dataPropName);
+      currentNode.next = this.length === 0 ? null : new Node(lastItem[this.dataPropName], this.dataPropName, null);
       reversal._length++;
       currentNode = currentNode.next;
     }
@@ -139,7 +139,6 @@ class List {
     return null;
   }
 
-
 }
 
-module.exports = { List, node };
+module.exports = { List, Node };

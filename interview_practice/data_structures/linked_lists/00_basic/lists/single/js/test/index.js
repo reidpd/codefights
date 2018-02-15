@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 // const node = require('../../../../nodes/js');
-const {List, node} = require('..');
+const {List, Node} = require('..');
 console.log(List);
 
 describe("testing ", () => {
@@ -28,7 +28,7 @@ describe("testing ", () => {
         expect(list.head.next.next[list.dataPropName]).to.deep.equal(3);
       });
       it('should increment this._length by 1', () => {
-        list.push(node.createSingle(1));
+        list.push(new Node(1));
         expect(list._length).to.deep.equal(1);
       });
     });
@@ -39,7 +39,7 @@ describe("testing ", () => {
         const pushVal = {val:1};
         list.push(pushVal);
         const returnVal = list.pop();
-        expect(returnVal).to.deep.equal(node.createSingle(pushVal, null, list.dataPropName));
+        expect(returnVal).to.deep.equal(new Node(pushVal, list.dataPropName));
       });
       it('removes the final node & sets the previous *next* pointer to null on second reference', () => {
         list.fill([0,1,2]);

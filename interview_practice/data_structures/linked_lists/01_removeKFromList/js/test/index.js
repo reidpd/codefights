@@ -2,7 +2,8 @@ const expect = require('chai').expect;
 const fns = require('..').fns;
 console.log('fns === ', fns);
 
-const List = require('../../../00_basic/lists/single/js/');
+const List = require('../../../00_basic/lists/single/js/').List;
+console.log(List);
 
 describe("testing ", () => {
   const tests = [
