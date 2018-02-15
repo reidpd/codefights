@@ -30,3 +30,18 @@ Guaranteed constraints:
 [output] linkedlist.integer
 
 Return l with all the values equal to k removed.
+
+
+///////////////////////
+SPOILERS....SPOILERS!!
+///////////////////////
+
+
+CLUE #1:
+To return a linked list, you only have to return the first ListNode.
+
+CLUE #2:
+Removing items from the beginning of the list requires shifting the ListNode you will actually return. Removing items that are not the first item requires shifting the next pointers to skip the appropriate item. It is worth dealing with these cases separately.
+
+CLUE #3:
+Once you have gone past a ListNode in a linked list, you cannot go back to it. When setting the first ListNode pointer, you should keep track of the current node to see what you should return. You just want to leave behind any nodes at the beginning that are equal to k. For nodes not at the beginning, you should be probing the next element in the list to see if you need to skip it.
