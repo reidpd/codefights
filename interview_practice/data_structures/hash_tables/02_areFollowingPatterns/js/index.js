@@ -1,6 +1,6 @@
 const areFollowingPatterns = (strings, patterns) => {
   return [strings, patterns].every((setOfKeys, keysIdx) => {
-    let hash = {}, setOfVals = keysIdx === 0 ? patterns : strings;
+    let hash = {}, setOfVals = [patterns, strings][keysIdx];
     setOfKeys.forEach((key, idx) => {
       if (setOfKeys.indexOf(key) === idx) { hash[key] = setOfVals[idx]; }
     })
