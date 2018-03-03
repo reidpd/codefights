@@ -1,5 +1,11 @@
-const hasPathWithGivenSum = () => {
+const hasPathWithGivenSum = (t, s) => {
+  const allPaths = findPaths(t, []);
   return true;
 };
 
-module.exports = { fns: [ hasPathWithGivenSum ] };
+const findPaths = (tree, path) => {
+  if (tree === null) { return [0] }
+
+}
+
+module.exports = { fns: [ hasPathWithGivenSum, findPaths ] };
