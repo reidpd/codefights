@@ -5,12 +5,32 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // swapAdjacentBits()
+      fn: '', // swapAdjacentBits(n)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [13],
+          out: 14,
+        },{
+          cxt: 'simple test',
+          in: [74],
+          out: 133,
+        },{
+          cxt: 'simple test',
+          in: [1073741823],
+          out: 1073741823,
+        },{
+          cxt: 'input of 0 returns 0',
+          in: [0],
+          out: 0,
+        },{
+          cxt: 'simple test',
+          in: [1],
+          out: 2,
+        },{
+          cxt: 'simple test',
+          in: [83748],
+          out: 166680,
         },
       ],
       run: param => {
