@@ -5,12 +5,28 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // mirrorBits()
+      fn: '', // mirrorBits(n)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [97],
+          out: 67,
+        },{
+          cxt: 'simple test',
+          in: [8],
+          out: 1,
+        },{
+          cxt: 'simple test',
+          in: [123],
+          out: 111,
+        },{
+          cxt: 'simple test',
+          in: [86782],
+          out: 65173,
+        },{
+          cxt: 'simple test',
+          in: [5],
+          out: 5,
         },
       ],
       run: param => {
