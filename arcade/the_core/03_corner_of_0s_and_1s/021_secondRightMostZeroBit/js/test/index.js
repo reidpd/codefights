@@ -5,12 +5,28 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // secondRightMostZeroBit()
+      fn: '', // secondRightMostZeroBit(n)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [37],
+          out: 8,
+        },{
+          cxt: 'simple test',
+          in: [1073741824],
+          out: 2,
+        },{
+          cxt: 'simple test',
+          in: [83748],
+          out: 2,
+        },{
+          cxt: 'simple test',
+          in: [4],
+          out: 2,
+        },{
+          cxt: 'simple test',
+          in: [728782938],
+          out: 4,
         },
       ],
       run: param => {
