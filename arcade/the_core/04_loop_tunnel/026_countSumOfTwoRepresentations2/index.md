@@ -16,7 +16,7 @@ Input/Output
 A positive integer.
 
 Guaranteed constraints:
-5 ≤ n ≤ 109.
+5 ≤ n ≤ 10^9.
 
 [input] integer l
 
@@ -30,7 +30,7 @@ Guaranteed constraints:
 A positive integer.
 
 Guaranteed constraints:
-l ≤ r ≤ 109,
-r - l ≤ 106.
+l ≤ r ≤ 10^9,
+r - l ≤ 10^6.
 
 [output] integer
