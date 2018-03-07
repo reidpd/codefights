@@ -5,12 +5,24 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // magicalWell()
+      fn: '', // magicalWell(a,b,n)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [1,2,2],
+          out: 8,
+        },{
+          cxt: 'simple test',
+          in: [1,1,1],
+          out: 1,
+        },{
+          cxt: 'simple test',
+          in: [6,5,3],
+          out: 128,
+        },{
+          cxt: 'having zero marbles means 0 dollars returned',
+          in: [2,3,0],
+          out: 0,
         },
       ],
       run: param => {
