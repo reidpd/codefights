@@ -19,7 +19,11 @@ describe("testing ", () => {
           cxt: 'simple test',
           in: [5],
           out: 6,
-        },
+        },{
+          cxt: '120 equals 120',
+          in: [120],
+          out: 120,
+        }
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
