@@ -117,7 +117,6 @@ describe("testing ", () => {
               in: ['R'],
               out: 71,
             }
-
           ],
           run: (instance, params) => {
             console.log('inst === ', instance);

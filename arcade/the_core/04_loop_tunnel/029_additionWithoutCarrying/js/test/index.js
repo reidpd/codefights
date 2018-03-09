@@ -8,9 +8,29 @@ describe("testing ", () => {
       fn: '', // additionWithoutCarrying()
       ins_and_outs: [
         {
+          cxt: 'add 2 numbers together and return the sum without carrying any digits beyond 9 to the next 10th',
+          in: [9, 9],
+          out: 8,
+        },{
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [456, 1734],
+          out: 1180,
+        },{
+          cxt: 'simple test',
+          in: [99999, 0],
+          out: 99999,
+        },{
+          cxt: 'simple test',
+          in: [999, 999],
+          out: 888,
+        },{
+          cxt: 'simple test',
+          in: [0, 0],
+          out: 0,
+        },{
+          cxt: 'simple test',
+          in: [54321, 54321],
+          out: 8642,
         },
       ],
       run: param => {
