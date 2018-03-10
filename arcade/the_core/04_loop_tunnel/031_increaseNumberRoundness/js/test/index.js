@@ -9,7 +9,43 @@ describe("testing ", () => {
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
+          in: [902200100],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: [11000],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: [99080],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: [1022220],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: [106611],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: [234230],
+          out: false,
+        },{
+          cxt: 'returns false if no zeroes are present already',
+          in: [888],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: [100],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: [1000000000],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: [103456789],
           out: true,
         },
       ],
