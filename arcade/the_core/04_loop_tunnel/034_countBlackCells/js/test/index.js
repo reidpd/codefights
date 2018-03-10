@@ -5,12 +5,48 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // countBlackCells()
+      fn: '', // countBlackCells(n,m)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [3,4],
+          out: 6,
+        },{
+          cxt: 'simple test',
+          in: [3,3],
+          out: 7,
+        },{
+          cxt: 'simple test',
+          in: [2,5],
+          out: 6,
+        },{
+          cxt: 'simple test',
+          in: [1,1],
+          out: 1,
+        },{
+          cxt: 'simple test',
+          in: [1,2],
+          out: 2,
+        },{
+          cxt: 'simple test',
+          in: [1,3],
+          out: 3,
+        },{
+          cxt: 'simple test',
+          in: [1,239],
+          out: 239,
+        },{
+          cxt: 'simple test',
+          in: [33,44],
+          out: 86,
+        },{
+          cxt: 'simple test',
+          in: [16,8],
+          out: 30,
+        },{
+          cxt: 'simple test',
+          in: [66666,88888],
+          out: 177774,
         },
       ],
       run: param => {
