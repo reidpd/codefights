@@ -5,12 +5,24 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // candles()
+      fn: '', // candles(candlesNumber, makeNew)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [5,2],
+          out: 9,
+        },{
+          cxt: 'simple test',
+          in: [1,2],
+          out: 1,
+        },{
+          cxt: 'simple test',
+          in: [3,3],
+          out: 4,
+        },{
+          cxt: 'simple test',
+          in: [11,3],
+          out: 16,
         },
       ],
       run: param => {
