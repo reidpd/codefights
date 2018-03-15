@@ -5,12 +5,32 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // differentRightmostBit()
+      fn: '', // differentRightmostBit(n,m)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [11,13],
+          out: 2,
+        },{
+          cxt: 'simple test',
+          in: [7,23],
+          out: 16,
+        },{
+          cxt: 'simple test',
+          in: [1,0],
+          out: 1,
+        },{
+          cxt: 'simple test',
+          in: [64,65],
+          out: 1,
+        },{
+          cxt: 'simple test',
+          in: [1073741823,1071513599],
+          out: 131072,
+        },{
+          cxt: 'simple test',
+          in: [42,22],
+          out: 4,
         },
       ],
       run: param => {
