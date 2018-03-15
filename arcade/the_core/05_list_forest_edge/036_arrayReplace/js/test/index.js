@@ -5,12 +5,20 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // arrayReplace()
+      fn: '', // arrayReplace(inputArray, elemToReplace, substitutionElem)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [[1,2,1], 1, 3],
+          out: [3,2,3],
+        },{
+          cxt: 'simple test',
+          in: [[1,2,3,4,5], 3, 0],
+          out: [1,2,0,4,5],
+        },{
+          cxt: 'simple test',
+          in: [[1,1,1], 1, 10],
+          out: [10, 10, 10],
         },
       ],
       run: param => {
