@@ -5,12 +5,20 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // removeArrayPart()
+      fn: '', // removeArrayPart(inputArray, l, r)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [[2, 3, 2, 3, 4, 5], 2, 4],
+          out: [2,3,5],
+        },{
+          cxt: 'simple test',
+          in: [[2, 4, 10, 1], 0, 2],
+          out: [1],
+        },{
+          cxt: 'simple test',
+          in: [[5, 3, 2, 3, 4], 1, 1],
+          out: [5,2,3,4],
         },
       ],
       run: param => {
