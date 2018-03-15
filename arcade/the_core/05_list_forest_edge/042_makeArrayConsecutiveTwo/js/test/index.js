@@ -5,18 +5,34 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // makeArrayConsecutive2()
+      fn: '', // makeArrayConsecutive2(statues)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [6, 2, 3, 8],
+          out: 3,
+        },{
+          cxt: 'simple test',
+          in: [0,3],
+          out: 2,
+        },{
+          cxt: 'simple test',
+          in: [5,4,6],
+          out: 0,
+        },{
+          cxt: 'simple test',
+          in: [6,3],
+          out: 2,
+        },{
+          cxt: 'simple test',
+          in: [1],
+          out: 0,
         },
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
         it(cxt, () => {
-          expect(param.fn(...param.in)).to.deep.equal(param.out);
+          expect(param.fn(param.in)).to.deep.equal(param.out);
         });
       }
     }/*, {
