@@ -7,8 +7,8 @@ Example
 For n = 10 and m = 11, the output should be
 equalPairOfBits(n, m) = 2.
 
-1010 = 10102, 1110 = 10112, the position of the rightmost pair of equal bits is the bit at position 1 (0-based) from the right in the binary representations.
-So the answer is 21 = 2.
+1010 = 1010^2, 1110 = 1011^2, the position of the rightmost pair of equal bits is the bit at position 1 (0-based) from the right in the binary representations.
+So the answer is 2^1 = 2.
 
 Input/Output
 

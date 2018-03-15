@@ -9,8 +9,24 @@ describe("testing ", () => {
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [4],
+          out: new Array(4).fill(1),
+        },{
+          cxt: 'simple test',
+          in: [2],
+          out: new Array(2).fill(1),
+        },{
+          cxt: 'simple test',
+          in: [1],
+          out: new Array(1).fill(1),
+        },{
+          cxt: 'simple test',
+          in: [5],
+          out: new Array(5).fill(1),
+        },{
+          cxt: 'simple test',
+          in: [49],
+          out: new Array(49).fill(1),
         },
       ],
       run: param => {
