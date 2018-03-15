@@ -1,5 +1,3 @@
-const createArray = (size) => {
-  return new Array(size).fill(1);
-};
+const createArray = size => new Array(size).fill(1);
 
 module.exports = { fns: [ createArray ] };
