@@ -9,8 +9,41 @@ describe("testing ", () => {
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
+          in: [16],
+          out: 9,
+        },
+        {
+          cxt: 'simple test',
+          in: [103],
+          out: 4,
+        },
+        {
+          cxt: 'simple test',
+          in: [1],
+          out: 2,
+        },
+      ],
+      run: param => {
+        const cxt = param.fn.name + '() ' + param.cxt;
+        it(cxt, () => {
+          expect(param.fn(...param.in)).to.deep.equal(param.out);
+        });
+      }
+    }, {
+      fn: '', // allDigitsAreUnique(sequence)
+      ins_and_outs: [
+        {
+          cxt: 'will be true when all digits are unique amongst the sequence',
+          in: [[1,2,3]],
           out: true,
+        },{
+          cxt: 'will be false when one digit amongst the sequence is not unique',
+          in: [[1,2,3,1]],
+          out: false,
+        },{
+          cxt: 'will be false when one digit in the middle of the sequence is not unique',
+          in: [[1,2,3,2]],
+          out: false,
         },
       ],
       run: param => {
