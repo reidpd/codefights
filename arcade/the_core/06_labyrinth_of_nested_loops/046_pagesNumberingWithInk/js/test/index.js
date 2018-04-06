@@ -5,12 +5,59 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // pagesNumberingWithInk()
+      fn: '', // pagesNumberingWithInk(current, numberOfDigits)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [1,5],
+          out: 5,
+        },{
+          cxt: 'simple test',
+          in: [21,5],
+          out: 22,
+        },{
+          cxt: 'simple test',
+          in: [8,4],
+          out: 10,
+        },{
+          cxt: 'simple test',
+          in: [21,6],
+          out: 23,
+        },{
+          cxt: 'simple test',
+          in: [76,250],
+          out: 166,
+        },{
+          cxt: 'simple test',
+          in: [80,1000],
+          out: 419,
+        },
+      ],
+      run: param => {
+        const cxt = param.fn.name + '() ' + param.cxt;
+        it(cxt, () => {
+          expect(param.fn(...param.in)).to.deep.equal(param.out);
+        });
+      }
+    }, {
+      fn: '', // countDigits(n)
+      ins_and_outs: [
+        {
+          cxt: 'simple test',
+          in: [1],
+          out: 1,
+        },{
+          cxt: 'simple test',
+          in: [11],
+          out: 2,
+        },{
+          cxt: 'simple test',
+          in: [111],
+          out: 3,
+        },{
+          cxt: 'simple test',
+          in: [123456],
+          out: 6,
         },
       ],
       run: param => {
