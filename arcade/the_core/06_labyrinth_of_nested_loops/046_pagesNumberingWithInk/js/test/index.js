@@ -66,6 +66,29 @@ describe("testing ", () => {
           expect(param.fn(...param.in)).to.deep.equal(param.out);
         });
       }
+    }, {
+      fn: '', // enoughDigitsForNum(n, digitsLeft)
+      ins_and_outs: [
+        {
+          cxt: 'will return true if there are more digits left than digits in the current number in order to number the page',
+          in: [22, 3],
+          out: true,
+        },{
+          cxt: 'will return false if there are not enough digits left in order to number the page',
+          in: [22, 1],
+          out: false,
+        },{
+          cxt: 'will return true if there are equal digits left in order to number the page',
+          in: [22,2],
+          out: true,
+        }
+      ],
+      run: param => {
+        const cxt = param.fn.name + '() ' + param.cxt;
+        it(cxt, () => {
+          expect(param.fn(...param.in)).to.deep.equal(param.out);
+        });
+      }
     }/*, {
       fn: '', // name
       ins_and_outs: [

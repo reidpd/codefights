@@ -12,4 +12,4 @@ const countDigits = n => n.toString().length;
 
 const enoughDigitsForNum = (n, digitsLeft) => countDigits(n) <= digitsLeft;
 
-module.exports = { fns: [ pagesNumberingWithInk, countDigits ] };
+module.exports = { fns: [ pagesNumberingWithInk, countDigits, enoughDigitsForNum ] };
