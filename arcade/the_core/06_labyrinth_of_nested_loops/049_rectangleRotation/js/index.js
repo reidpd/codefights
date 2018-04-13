@@ -1,4 +1,4 @@
-const rectangleRotation = () => {
+const rectangleRotation = (a,b) => {
   return true;
 };
 

@@ -5,12 +5,24 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // rectangleRotation()
+      fn: '', // rectangleRotation(a,b)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [6,4],
+          out: 23,
+        },{
+          cxt: 'simple test',
+          in: [30,2],
+          out: 65,
+        },{
+          cxt: 'simple test',
+          in: [8,6],
+          out: 49,
+        },{
+          cxt: 'simple test',
+          in: [16,20],
+          out: 333,
         },
       ],
       run: param => {
