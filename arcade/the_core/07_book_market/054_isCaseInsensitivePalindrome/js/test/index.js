@@ -9,14 +9,50 @@ describe("testing ", () => {
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
+          in: 'AaBaa',
           out: true,
+        },{
+          cxt: 'simple test',
+          in: 'abac',
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: 'aBACaba',
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: 'opOP',
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: 'ZZzzazZzz',
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: 'zzzzazzzz',
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: 'ZZzzabzZzz',
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: 'abcdcbA',
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: 'abracabra',
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: 'abcd',
+          out: false,
         },
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
         it(cxt, () => {
-          expect(param.fn(...param.in)).to.deep.equal(param.out);
+          expect(param.fn(param.in)).to.deep.equal(param.out);
         });
       }
     }/*, {
