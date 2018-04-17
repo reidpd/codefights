@@ -44,7 +44,7 @@ describe("testing ", () => {
         });
       }
     }, {
-      fn: '', // findDivisors(n)
+      fn: '', // divisors(n)
       ins_and_outs: [
         {
           cxt: 'returns an array containing all integers that are common divisors with n',
