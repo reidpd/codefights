@@ -9,14 +9,22 @@ describe("testing ", () => {
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: 'pARiS',
+          out: 'Paris',
+        },{
+          cxt: 'simple test',
+          in: 'John',
+          out: 'John',
+        },{
+          cxt: 'simple test',
+          in: 'mary',
+          out: 'Mary',
         },
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
         it(cxt, () => {
-          expect(param.fn(...param.in)).to.deep.equal(param.out);
+          expect(param.fn(param.in)).to.deep.equal(param.out);
         });
       }
     }/*, {
