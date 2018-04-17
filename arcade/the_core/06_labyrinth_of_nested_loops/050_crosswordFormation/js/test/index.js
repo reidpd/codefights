@@ -5,18 +5,38 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // crosswordFormation()
+      fn: '', // crosswordFormation(words)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: ["crossword", "square", "formation", "something"],
+          out: 6,
+        },{
+          cxt: 'simple test',
+          in: ["anaesthetist", "thatch", "ethnics", "sabulous"],
+          out: 0,
+        },{
+          cxt: 'simple test',
+          in: ["eternal", "texas", "chainsaw", "massacre"],
+          out: 4,
+        },{
+          cxt: 'simple test',
+          in: ["africa", "america", "australia", "antarctica"],
+          out: 62,
+        },{
+          cxt: 'simple test',
+          in: ["phenomenon", "remuneration", "particularly", "pronunciation"],
+          out: 62,
+        },{
+          cxt: 'simple test',
+          in: ["onomatopoeia", "philosophical", "provocatively", "thesaurus"],
+          out: 20,
         },
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
         it(cxt, () => {
-          expect(param.fn(...param.in)).to.deep.equal(param.out);
+          expect(param.fn(param.in)).to.deep.equal(param.out);
         });
       }
     }/*, {
