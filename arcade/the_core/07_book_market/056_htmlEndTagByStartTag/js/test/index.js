@@ -8,15 +8,23 @@ describe("testing ", () => {
       fn: '', // htmlEndTagByStartTag()
       ins_and_outs: [
         {
-          cxt: 'simple test',
-          in: [],
-          out: true,
+          cxt: 'simple tags with attributes',
+          in: "<button type='button' disabled>",
+          out: "</button>",
+        },{
+          cxt: 'simple tag with no attributes',
+          in: "<i>",
+          out: "</i>",
+        },{
+          cxt: 'complex tag with several attributes',
+          in: "<div id='my_area' class='data' title='This is a test for title on Div tag'>",
+          out: "</div>",
         },
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
         it(cxt, () => {
-          expect(param.fn(...param.in)).to.deep.equal(param.out);
+          expect(param.fn(param.in)).to.deep.equal(param.out);
         });
       }
     }/*, {
