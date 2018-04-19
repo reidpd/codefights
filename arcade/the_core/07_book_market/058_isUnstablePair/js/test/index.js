@@ -5,11 +5,47 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // isUnstablePair()
+      fn: '', // isUnstablePair(filename1, filename2)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
+          in: ["aa", "AAB"],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: ["A", "z"],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: ["yyyyyy", "Azzzzzzzzz"],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: ["mehOu", "mehau"],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: ["aaZ", "AAzz"],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: ["fdsAs", "dzdw"],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: ["aaad", "aaAdd"],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: ["zzzzzAa123", "zzzzza"],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: ["123za", "123Z"],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: ["qwerTyu123", "qwertyu"],
           out: true,
         },
       ],
