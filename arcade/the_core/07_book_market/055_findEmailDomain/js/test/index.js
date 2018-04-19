@@ -9,14 +9,26 @@ describe("testing ", () => {
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
-        },
+          in: "prettyandsimple@example.com",
+          out: "example.com",
+        },{
+          cxt: 'simple test',
+          in: "<>[]:,;@\"!#$%&*+-/=?^_{}| ~.a\"@example.org",
+          out: "example.org",
+        },{
+          cxt: 'simple test',
+          in: "someaddress@yandex.ru",
+          out: "yandex.ru",
+        },{
+          cxt: 'simple test',
+          in: "\" \"@xample.org",
+          out: "xample.org",
+        }
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
         it(cxt, () => {
-          expect(param.fn(...param.in)).to.deep.equal(param.out);
+          expect(param.fn(param.in)).to.deep.equal(param.out);
         });
       }
     }/*, {
