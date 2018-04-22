@@ -5,11 +5,47 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // isSubstitutionCipher(string1, string2)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
+          in: ["aacb", "aabc"],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: ["aa", "bc"],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: ["aaxxaaz", "aazzaay"],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: ["aaxyaa", "aazzaa"],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: ["aabc", "aacb"],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: ["dccd", "zzxx"],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: ["ddcc", "zzxx"],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: ["aaaabbbbcc", "cccccccccc"],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: ["abcdefg", "hijklmn"],
+          out: true,
+        },{
+          cxt: 'returns true when both strings are identical',
+          in: ["aaabbbccc", "aaabbbccc"],
           out: true,
         },
       ],
