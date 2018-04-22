@@ -5,12 +5,24 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // stringsConstruction(a,b)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: ["abc", "abccba"],
+          out: 2,
+        },{
+          cxt: 'simple test',
+          in: ["hnccv", "hncvohcjhdfnhonxddcocjncchnvohchnjohcvnhjdhihsn"],
+          out: 3,
+        },{
+          cxt: 'should return 0 if a single iteration of string a cannot be found in string b',
+          in: ["abc", "def"],
+          out: 0,
+        },{
+          cxt: 'leftover portions of string a within string b do not count',
+          in: ["zzz", "zzzzzzzzzzz"],
+          out: 3,
         },
       ],
       run: param => {
