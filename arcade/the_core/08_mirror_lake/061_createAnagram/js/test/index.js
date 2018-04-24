@@ -5,12 +5,20 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // createAnagram(s,t)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: ["AABAA", "BBAAA"],
+          out: 1,
+        },{
+          cxt: 'simple test',
+          in: ["OVGHK", "RPGUC"],
+          out: 4,
+        },{
+          cxt: 'simple test',
+          in: ["AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC"],
+          out: 1,
         },
       ],
       run: param => {

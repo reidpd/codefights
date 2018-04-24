@@ -1,5 +1,6 @@
-const funcName = () => {
-  return true;
+const createAnagram = (s,t) => {
+  s = s.split(''), t = t.split('');
+  
 };
 
-module.exports = { fns: [ funcName ] };
+module.exports = { fns: [ createAnagram ] };
