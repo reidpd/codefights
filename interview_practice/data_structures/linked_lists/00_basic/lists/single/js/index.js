@@ -141,4 +141,13 @@ class List {
 
 }
 
-module.exports = { List, Node };
+const createListFromArray = (arr, list = {}, index = 0) => {
+  if (arr.length === 0) { return null; } else {
+    list.value = arr.shift();
+    list.index = index++;
+    list.next = createListFromArray(arr, {}, index);
+  }
+  return list;
+}
+
+module.exports = { List, Node, createListFromArray };

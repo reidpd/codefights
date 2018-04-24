@@ -1,6 +1,7 @@
 const expect = require('chai').expect;
 // const node = require('../../../../nodes/js');
 const {List, Node} = require('..');
+const createListFromArray = require('..').createListFromArray;
 console.log(List);
 
 describe("testing ", () => {
@@ -324,4 +325,25 @@ describe("testing ", () => {
   //     test.run(params);
   //   });
   // });
+});
+
+describe('createListFromArray', () => {
+  it('will function as expected', () => {
+    const arr = [1,2,3];
+    const obj = {
+      value: 1,
+      index: 0,
+      next: {
+        value: 2,
+        index: 1,
+        next: {
+          value: 3,
+          index: 2,
+          next: null,
+        }
+      }
+    }
+    expect(createListFromArray(arr)).to.deep.equal(obj);
+  });
+
 });
