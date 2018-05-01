@@ -16,6 +16,6 @@ Input/Output
 Matrix size, a positive integer.
 
 Guaranteed constraints:
-3 ≤ n ≤ 10.
+3 ≤ n ≤ 100.
 
 [output] array.array.integer
