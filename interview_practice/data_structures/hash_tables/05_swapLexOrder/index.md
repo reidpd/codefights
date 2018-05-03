@@ -16,7 +16,7 @@ Input/Output
 A string consisting only of lowercase English letters.
 
 Guaranteed constraints:
-1 ≤ str.length ≤ 104.
+1 ≤ str.length ≤ 10^4.
 
 [input] array.array.integer pairs
 

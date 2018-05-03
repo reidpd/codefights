@@ -1,4 +1,4 @@
-const swapLexOrder = () => {
+const swapLexOrder = (str, pairs) => {
   return true;
 };
 
