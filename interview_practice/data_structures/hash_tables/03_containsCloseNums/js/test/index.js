@@ -8,14 +8,14 @@ describe("testing ", () => {
       fn: '', // containsCloseNums(nums, k)
       ins_and_outs: [
         {
-          cxt: 'simple test',
+          cxt: 'returns true when the absolute diff between index positions of two identical ints within nums is less than or equal to k',
           in: [
             [0, 1, 2, 3, 5, 2],
             3
           ],
           out: true,
         },{
-          cxt: 'simple test',
+          cxt: 'returns false when the absolute diff between index positions of two identical ints within nums is greater than k',
           in: [
             [0, 1, 2, 3, 5, 2],
             2
