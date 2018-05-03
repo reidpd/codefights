@@ -1,4 +1,4 @@
-const rearrangeLastN = () => {
+const rearrangeLastN = (l,n) => {
   return true;
 };
 
