@@ -5,18 +5,38 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // constructSquare(s)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: "ab",
+          out: 81,
+        },{
+          cxt: 'simple test',
+          in: "zzz",
+          out: -1,
+        },{
+          cxt: 'simple test',
+          in: "aba",
+          out: 900,
+        },{
+          cxt: 'simple test',
+          in: "abcbbb",
+          out: 810000,
+        },{
+          cxt: 'simple test',
+          in: "abc",
+          out: 961,
+        },{
+          cxt: 'simple test',
+          in: "aaaabbcde",
+          out: 999950884,
         },
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
         it(cxt, () => {
-          expect(param.fn(...param.in)).to.deep.equal(param.out);
+          expect(param.fn(param.in)).to.deep.equal(param.out);
         });
       }
     }/*, {
