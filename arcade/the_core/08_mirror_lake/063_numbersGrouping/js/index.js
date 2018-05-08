@@ -1,5 +1,5 @@
-const funcName = () => {
+const numbersGrouping = a => {
   return true;
 };
 
-module.exports = { fns: [ funcName ] };
+module.exports = { fns: [ numbersGrouping ] };
