@@ -26,7 +26,7 @@ Input/Output
 A line containing a path presented in Unix style format. All directories in the path are guaranteed to consist only of English letters.
 
 Guaranteed constraints:
-1 ≤ path.length ≤ 5 · 104.
+1 ≤ path.length ≤ (5 · 10^4).
 
 [output] string
 
