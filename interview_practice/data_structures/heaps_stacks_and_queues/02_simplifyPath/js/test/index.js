@@ -9,14 +9,82 @@ describe("testing ", () => {
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: "/home/a/./x/../b//c/",
+          out: "/home/a/b/c",
+        },{
+          cxt: 'simple test',
+          in: "/a/b/c/../..",
+          out: "/a",
+        },{
+          cxt: 'simple test',
+          in: "/../",
+          out: "/",
+        },{
+          cxt: 'simple test',
+          in: "/",
+          out: "/",
+        },{
+          cxt: 'simple test',
+          in: "//a//b//./././c",
+          out: "/a/b/c",
+        },{
+          cxt: 'simple test',
+          in: "a/../../b/",
+          out: "/b",
+        },{
+          cxt: 'simple test',
+          in: "a/b/../c/d/../../e/../../",
+          out: "/",
+        },{
+          cxt: 'simple test',
+          in: "/.././///",
+          out: "/",
+        },{
+          cxt: 'simple test',
+          in: "/cHj/T//",
+          out: "/cHj/T",
+        },{
+          cxt: 'simple test',
+          in: "/////..///K/BruP/RMplU/././",
+          out: "/K/BruP/RMplU",
+        },{
+          cxt: 'simple test',
+          in: "/mpJN/..///../../ubYgf/tFM/",
+          out: "/ubYgf/tFM",
+        },{
+          cxt: 'simple test',
+          in: "/N/cKX/bdrC/./ozFyd/NyuwO/",
+          out: "/N/cKX/bdrC/ozFyd/NyuwO",
+        },{
+          cxt: 'simple test',
+          in: "/home/",
+          out: "/home",
+        },{
+          cxt: 'simple test',
+          in: "/AagbK/////iavh/M/rmKaS/tXD/././lND//",
+          out: "/AagbK/iavh/M/rmKaS/tXD/lND",
+        },{
+          cxt: 'simple test',
+          in: "/oCTY/XJwyB/zA/qgfp/RQFl/kY/./Pa/nth/",
+          out: "/oCTY/XJwyB/zA/qgfp/RQFl/kY/Pa/nth",
+        },{
+          cxt: 'simple test',
+          in: "/home//foo/",
+          out: "/home/foo",
+        },{
+          cxt: 'simple test',
+          in: "/a/./b/../../c/",
+          out: "/c",
+        },{
+          cxt: 'simple test',
+          in: "a/b/../c/d/../../e/../../a/",
+          out: "/a",
         },
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
         it(cxt, () => {
-          expect(param.fn(...param.in)).to.deep.equal(param.out);
+          expect(param.fn(param.in)).to.deep.equal(param.out);
         });
       }
     }/*, {
