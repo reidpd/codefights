@@ -12,19 +12,19 @@ describe("testing ", () => {
           in: "/home/a/./x/../b//c/",
           out: "/home/a/b/c",
         },{
-          cxt: 'simple test',
+          cxt: 'double-periods will simplify the path to parent directories accordingly',
           in: "/a/b/c/../..",
           out: "/a",
         },{
-          cxt: 'simple test',
+          cxt: 'paths that only specify to refer to the parent directory will return just the root directory',
           in: "/../",
           out: "/",
         },{
-          cxt: 'simple test',
+          cxt: 'a single forward slash will return a single forward slash',
           in: "/",
           out: "/",
         },{
-          cxt: 'simple test',
+          cxt: 'double-forward-slashes are replaced with single ones, and "/./" combinations return "/"',
           in: "//a//b//./././c",
           out: "/a/b/c",
         },{
