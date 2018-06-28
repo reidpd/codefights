@@ -5,18 +5,78 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // addBorder(picture)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [
+            "abc",
+            "ded"
+          ],
+          out: [
+            "*****",
+            "*abc*",
+            "*ded*",
+            "*****"
+          ],
+        },{
+          cxt: 'simple test',
+          in: [
+            "a"
+          ],
+          out: [
+            "***",
+            "*a*",
+            "***"
+          ],
+        },{
+          cxt: 'simple test',
+          in: [
+            "aa",
+            "**",
+            "zz"
+          ],
+          out: [
+            "****",
+            "*aa*",
+            "****",
+            "*zz*",
+            "****"
+          ],
+        },{
+          cxt: 'simple test',
+          in: [
+            "abcde",
+            "fghij",
+            "klmno",
+            "pqrst",
+            "uvwxy"
+          ],
+          out: [
+            "*******",
+            "*abcde*",
+            "*fghij*",
+            "*klmno*",
+            "*pqrst*",
+            "*uvwxy*",
+            "*******"
+          ],
+        },{
+          cxt: 'simple test',
+          in: [
+            "wzy**"
+          ],
+          out: [
+            "*******",
+            "*wzy***",
+            "*******"
+          ],
         },
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
         it(cxt, () => {
-          expect(param.fn(...param.in)).to.deep.equal(param.out);
+          expect(param.fn(param.in)).to.deep.equal(param.out);
         });
       }
     }/*, {
