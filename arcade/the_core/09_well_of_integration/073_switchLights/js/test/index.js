@@ -5,18 +5,30 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // switchLights(a)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
-        },
+          in: [1, 1, 1, 1, 1],
+          out: [0, 1, 0, 1, 0],
+        },{
+          cxt: 'simple test',
+          in: [0,0],
+          out: [0,0]
+        },{
+          cxt: 'simple test',
+          in: [1, 0, 0, 1, 0, 1, 0, 1],
+          out: [1, 1, 1, 0, 0, 1, 1, 0]
+        },{
+          cxt: 'simple test',
+          in: [1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1],
+          out: [1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0]
+        }
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
         it(cxt, () => {
-          expect(param.fn(...param.in)).to.deep.equal(param.out);
+          expect(param.fn(param.in)).to.deep.equal(param.out);
         });
       }
     }/*, {
