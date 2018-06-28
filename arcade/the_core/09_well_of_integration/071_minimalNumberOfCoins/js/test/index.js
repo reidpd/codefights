@@ -5,12 +5,43 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // minimalNumberOfCoins(coins, price)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [
+            [1,2,10],
+            28
+          ],
+          out: 6,
+        },{
+          cxt: 'simple test',
+          in: [
+            [1,5,10,100],
+            239
+          ],
+          out: 10,
+        },{
+          cxt: 'simple test',
+          in: [
+            [1],
+            8
+          ],
+          out: 8,
+        },{
+          cxt: 'simple test',
+          in: [
+            [1,2,20,60,120],
+            150
+          ],
+          out: 7,
+        },{
+          cxt: 'simple test',
+          in: [
+            [1,3,6,30],
+            45
+          ],
+          out: 4,
         },
       ],
       run: param => {
