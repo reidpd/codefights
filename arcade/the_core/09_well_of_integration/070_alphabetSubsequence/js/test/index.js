@@ -5,18 +5,54 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // alphabetSubsequence(s)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
+          in: "effg",
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: "cdce",
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: "ace",
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: "bxz",
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: "cdefghijkxyzz",
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: "qa",
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: "fkyz",
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: "xz",
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: "pfyz",
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: "fz",
           out: true,
         },
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
         it(cxt, () => {
-          expect(param.fn(...param.in)).to.deep.equal(param.out);
+          expect(param.fn(param.in)).to.deep.equal(param.out);
         });
       }
     }/*, {
