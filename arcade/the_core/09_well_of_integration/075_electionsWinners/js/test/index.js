@@ -5,12 +5,50 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // electionsWinners(votes, k)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [
+            [2, 3, 5, 2],
+            3
+          ],
+          out: 2,
+        },{
+          cxt: 'simple test',
+          in: [
+            [1, 3, 3, 1, 1],
+            0
+          ],
+          out: 0,
+        },{
+          cxt: 'simple test',
+          in: [
+            [5, 1, 3, 4, 1],
+            0
+          ],
+          out: 1,
+        },{
+          cxt: 'simple test',
+          in: [
+            [1, 1, 1, 1],
+            1
+          ],
+          out: 4,
+        },{
+          cxt: 'simple test',
+          in: [
+            [1, 1, 1, 1],
+            0
+          ],
+          out: 0,
+        },{
+          cxt: 'simple test',
+          in: [
+            [3, 1, 1, 3, 1],
+            2
+          ],
+          out: 2,
         },
       ],
       run: param => {
