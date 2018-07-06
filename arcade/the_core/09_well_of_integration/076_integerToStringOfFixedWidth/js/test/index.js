@@ -5,12 +5,36 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // integerToStringOfFixedWidth(number, width)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [
+            1234,
+            2
+          ],
+          out: "34",
+        },{
+          cxt: 'simple test',
+          in: [
+            1234,
+            4
+          ],
+          out: "1234",
+        },{
+          cxt: 'simple test',
+          in: [
+            1234,
+            5
+          ],
+          out: "01234",
+        },{
+          cxt: 'simple test',
+          in: [
+            0,
+            1
+          ],
+          out: "0",
         },
       ],
       run: param => {
