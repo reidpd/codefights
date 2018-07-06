@@ -5,12 +5,78 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // areSimilar(a, b)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
+          in: [
+            [1,2,3],
+            [1,2,3]
+          ],
           out: true,
+        },{
+          cxt: 'simple test',
+          in: [
+            [1,2,3],
+            [2,1,3]
+          ],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: [
+            [1,2,2],
+            [2,1,1]
+          ],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: [
+            [1,1,4],
+            [1,2,3]
+          ],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: [
+            [1,2,3],
+            [1,10,2]
+          ],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: [
+            [2,3,1],
+            [1,3,2]
+          ],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: [
+            [2,3,9],
+            [10,3,2]
+          ],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: [
+            [4,6,3],
+            [3,4,6]
+          ],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: [
+            [832, 998, 148, 570, 533, 561, 894, 147, 455, 279],
+            [832, 998, 148, 570, 533, 561, 455, 147, 894, 279]
+          ],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: [
+            [832, 998, 148, 570, 533, 561, 894, 147, 455, 279],
+            [832, 570, 148, 998, 533, 561, 455, 147, 894, 279]
+          ],
+          out: false,
         },
       ],
       run: param => {
