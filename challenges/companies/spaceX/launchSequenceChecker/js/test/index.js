@@ -5,11 +5,42 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // launchSequenceChecker(systemNames, stepNumbers)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
+          in: [
+            ["stage_1", "stage_2", "dragon", "stage_1", "stage_2", "dragon"],
+            [1, 10, 11, 2, 12, 111]
+          ],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: [
+            ["stage_1", "stage_1", "stage_2", "dragon"],
+            [2, 1, 12, 111]
+          ],
+          out: false,
+        },{
+          cxt: 'simple test',
+          in: [
+            ["", "", ""],
+            [00, 01, 02]
+          ],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: [
+            ["", "", ""],
+            [00, 01, 02]
+          ],
+          out: true,
+        },{
+          cxt: 'simple test',
+          in: [
+            ["", "", ""],
+            [00, 01, 02]
+          ],
           out: true,
         },
       ],
