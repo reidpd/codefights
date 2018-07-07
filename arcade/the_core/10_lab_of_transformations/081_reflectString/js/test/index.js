@@ -5,18 +5,34 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // reflectString(inputString)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: "name",
+          out: "mznv",
+        },{
+          cxt: 'simple test',
+          in: "abyz",
+          out: "zyba",
+        },{
+          cxt: 'simple test',
+          in: "nnnnn",
+          out: "mmmmm",
+        },{
+          cxt: 'simple test',
+          in: "pqr",
+          out: "kji",
+        },{
+          cxt: 'simple test',
+          in: "codefights",
+          out: "xlwvurtsgh",
         },
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
         it(cxt, () => {
-          expect(param.fn(...param.in)).to.deep.equal(param.out);
+          expect(param.fn(param.in)).to.deep.equal(param.out);
         });
       }
     }/*, {
