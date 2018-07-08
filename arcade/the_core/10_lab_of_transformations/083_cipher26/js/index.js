@@ -13,14 +13,3 @@ const cipher26 = message => {
 const sum = (arr, lastNum) => arr.reduce((acc,cv)=>acc+cv) + lastNum;
 
 module.exports = { fns: [ cipher26 ] };
-
-// let alphabet = new Array(26).fill(0).map((int,i)=>String.fromCharCode(97+i));
-    // let total = 0, decryptedMessage = [];
-    // message.split('').forEach((char, idx) => {
-    //     console.log('cc === ', alphabet.indexOf(char), ', total === ', total);
-    //     total += alphabet.indexOf(char);
-    //     decryptedMessage.push(alphabet[total%26]);
-    //     console.log('decryptedMessage === ', decryptedMessage)
-    // });
-    // console.log(decryptedMessage);
-    // return decryptedMessage.join('');
