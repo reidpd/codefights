@@ -9,14 +9,34 @@ describe("testing ", () => {
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: "taiaiaertkixquxjnfxxdh",
+          out: "thisisencryptedmessage",
+        },{
+          cxt: 'simple test',
+          in: "ibttlprimfymqlpgeftwu",
+          out: "itsasecrettoeverybody",
+        },{
+          cxt: 'simple test',
+          in: "ftnexvoky",
+          out: "fourtytwo",
+        },{
+          cxt: 'simple test',
+          in: "taevzhzmashvjw",
+          out: "thereisnospoon",
+        },{
+          cxt: 'simple test',
+          in: "abdgkpvcktdoanbqgxpicxtqon",
+          out: "abcdefghijklmnopqrstuvwxyz",
+        },{
+          cxt: 'simple test',
+          in: "z",
+          out: "z",
         },
       ],
       run: param => {
         const cxt = param.fn.name + '() ' + param.cxt;
         it(cxt, () => {
-          expect(param.fn(...param.in)).to.deep.equal(param.out);
+          expect(param.fn(param.in)).to.deep.equal(param.out);
         });
       }
     }/*, {
