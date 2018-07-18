@@ -5,12 +5,77 @@ console.log('fns === ', fns);
 describe("testing ", () => {
   const tests = [
     {
-      fn: '', // name
+      fn: '', // stringsCrossover(inputArray, result)
       ins_and_outs: [
         {
           cxt: 'simple test',
-          in: [],
-          out: true,
+          in: [
+            [
+              "abc",
+              "aaa",
+              "aba",
+              "bab"
+            ],
+            "bbb"
+          ],
+          out: 2,
+        },{
+          cxt: 'simple test',
+          in: [
+            [
+              "aacccc",
+              "bbcccc"
+            ],
+            "abdddd"
+          ],
+          out: 0,
+        },{
+          cxt: 'simple test',
+          in: [
+            [
+              "a",
+              "b",
+              "c",
+              "d",
+              "e"
+            ],
+            "c"
+          ],
+          out: 4,
+        },{
+          cxt: 'simple test',
+          in: [
+            [
+              "aa",
+              "ab",
+              "ba"
+            ],
+            "bb"
+          ],
+          out: 1,
+        },{
+          cxt: 'simple test',
+          in: [
+            [
+              "a",
+              "b",
+              "c",
+              "d",
+              "e"
+            ],
+            "f"
+          ],
+          out: 0,
+        },{
+          cxt: 'simple test',
+          in: [
+            [
+              "aaa",
+              "aaa"
+            ],
+            "aaa"
+          ],
+          out: 1,
         },
       ],
       run: param => {
